@@ -41,7 +41,7 @@ def process_task(proc_id):
     
     # Launch n threads per process
     for i in range(NO_OF_THREADS_PER_PROCESS):
-        t = threading.Thread(target=thread_task, args=(f"{proc_id}-{i}"), daemon=True)
+        t = threading.Thread(target=thread_task, args=(f"{proc_id}-{i}",), daemon=True)
         t.start()
 
     # Threads will finish on the end of this scope
